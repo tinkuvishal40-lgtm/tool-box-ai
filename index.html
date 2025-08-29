@@ -1,3 +1,4 @@
+ <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
@@ -27,6 +28,7 @@
             background-color: var(--white);
             color: var(--black);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* हेडर स्टाइलिंग */
@@ -40,11 +42,14 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            flex-wrap: wrap;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
+            flex: 1;
+            min-width: 200px;
         }
 
         .logo {
@@ -62,7 +67,7 @@
         }
 
         .logo-text {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             color: var(--primary-blue);
         }
@@ -70,7 +75,9 @@
         .top-right-options {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         .language-selector {
@@ -82,13 +89,14 @@
             background-color: transparent;
             border: 1px solid var(--primary-blue);
             color: var(--primary-blue);
-            padding: 8px 15px;
+            padding: 8px 12px;
             border-radius: 20px;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 5px;
             font-weight: 500;
+            font-size: 14px;
         }
 
         .language-dropdown {
@@ -97,7 +105,7 @@
             right: 0;
             top: 100%;
             background-color: var(--white);
-            min-width: 160px;
+            min-width: 140px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             z-index: 1;
@@ -106,10 +114,11 @@
 
         .language-dropdown a {
             color: var(--black);
-            padding: 12px 16px;
+            padding: 10px 14px;
             text-decoration: none;
             display: block;
             border-bottom: 1px solid #eee;
+            font-size: 14px;
         }
 
         .language-dropdown a:hover {
@@ -129,6 +138,7 @@
             text-decoration: none;
             font-weight: 500;
             cursor: pointer;
+            font-size: 14px;
         }
 
         .contact-dropdown {
@@ -137,23 +147,24 @@
             right: 0;
             top: 100%;
             background-color: var(--white);
-            width: 280px;
+            width: 260px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             z-index: 1;
             margin-top: 5px;
-            padding: 15px;
+            padding: 12px;
         }
 
         .contact-info {
             color: var(--black);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 10px;
+            padding: 8px;
             border-radius: 5px;
             transition: background-color 0.3s;
+            font-size: 14px;
         }
 
         .contact-info:hover {
@@ -166,13 +177,13 @@
 
         .contact-info i {
             color: var(--primary-blue);
-            width: 20px;
-            font-size: 18px;
+            width: 18px;
+            font-size: 16px;
         }
 
         .contact-info span {
             flex: 1;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .contact-container {
@@ -193,11 +204,12 @@
             border-radius: 20px;
             color: var(--primary-blue);
             font-weight: 500;
+            font-size: 14px;
         }
 
         .indian-flag {
-            width: 20px;
-            height: 15px;
+            width: 18px;
+            height: 13px;
             background: linear-gradient(to bottom, #ff9933 33%, white 33%, white 66%, #138808 66%);
             position: relative;
         }
@@ -208,8 +220,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 5px;
-            height: 5px;
+            width: 4px;
+            height: 4px;
             background: #000080;
             border-radius: 50%;
         }
@@ -217,14 +229,14 @@
         /* सर्च सेक्शन */
         .search-section {
             background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
-            padding: 40px 5%;
+            padding: 30px 5%;
             text-align: center;
             color: var(--white);
         }
 
         .search-section h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
 
         .search-container {
@@ -235,7 +247,7 @@
 
         .search-input {
             width: 100%;
-            padding: 15px 20px;
+            padding: 12px 18px;
             border: none;
             border-radius: 50px;
             font-size: 16px;
@@ -249,52 +261,62 @@
             background-color: var(--primary-blue);
             border: none;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 500;
+            font-size: 14px;
         }
 
         /* मुख्य कंटेंट */
         .main-container {
             display: flex;
-            padding: 30px 5%;
-            gap: 30px;
+            padding: 20px 5%;
+            gap: 20px;
+            flex-direction: column;
         }
 
         /* साइडबार */
         .sidebar {
-            flex: 0 0 250px;
             background-color: var(--white);
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-            padding: 20px;
+            padding: 15px;
             height: fit-content;
+            width: 100%;
+            order: 2;
         }
 
         .sidebar h2 {
             color: var(--primary-blue);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
             border-bottom: 2px solid var(--light-blue);
+            font-size: 18px;
         }
 
         .category-list {
             list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .category-item {
-            margin-bottom: 10px;
+            margin-bottom: 0;
+            flex: 1 0 calc(50% - 8px);
         }
 
         .category-link {
             display: block;
-            padding: 10px 15px;
+            padding: 10px 12px;
             color: var(--black);
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s ease;
             cursor: pointer;
+            text-align: center;
+            font-size: 14px;
         }
 
         .category-link:hover, .category-link.active {
@@ -304,27 +326,29 @@
 
         /* टूल्स ग्रिड */
         .tools-section {
-            flex: 1;
+            order: 1;
+            width: 100%;
         }
 
         .section-title {
             color: var(--primary-blue);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
             border-bottom: 2px solid var(--light-blue);
+            font-size: 20px;
         }
 
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
         }
 
         .tool-card {
             background-color: var(--white);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
@@ -336,36 +360,37 @@
         }
 
         .tool-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 15px;
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 10px;
             background-color: var(--light-blue);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary-blue);
-            font-size: 24px;
+            font-size: 20px;
         }
 
         .tool-name {
             color: var(--primary-blue);
             font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 18px;
+            margin-bottom: 8px;
+            font-size: 16px;
         }
 
         .tool-description {
             color: var(--black);
-            font-size: 14px;
+            font-size: 12px;
+            line-height: 1.4;
         }
 
         .no-results {
             grid-column: 1 / -1;
             text-align: center;
-            padding: 40px;
+            padding: 30px;
             color: var(--dark-gray);
-            font-size: 18px;
+            font-size: 16px;
         }
 
         /* भाषा स्विचर */
@@ -374,16 +399,17 @@
             align-items: center;
             background-color: var(--light-blue);
             border-radius: 30px;
-            padding: 5px;
-            margin: 0 10px;
+            padding: 4px;
+            margin: 0 5px;
         }
 
         .language-option {
-            padding: 8px 15px;
+            padding: 6px 12px;
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
+            font-size: 13px;
         }
 
         .language-option.active {
@@ -395,22 +421,22 @@
         footer {
             background-color: var(--black);
             color: var(--white);
-            padding: 50px 5% 20px;
+            padding: 30px 5% 15px;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .footer-column h3 {
             color: var(--white);
-            margin-bottom: 20px;
-            font-size: 18px;
+            margin-bottom: 15px;
+            font-size: 16px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
         .footer-column h3::after {
@@ -418,7 +444,7 @@
             position: absolute;
             left: 0;
             bottom: 0;
-            width: 40px;
+            width: 30px;
             height: 2px;
             background-color: var(--primary-blue);
         }
@@ -428,13 +454,14 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .footer-links a {
             color: #ccc;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 14px;
         }
 
         .footer-links a:hover {
@@ -443,13 +470,19 @@
 
         .donate-section {
             background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .donate-section h2 {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .donate-section p {
+            font-size: 14px;
             margin-bottom: 15px;
         }
 
@@ -457,13 +490,14 @@
             display: inline-block;
             background-color: var(--white);
             color: var(--primary-blue);
-            padding: 12px 30px;
+            padding: 10px 25px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 15px;
+            margin-top: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            font-size: 14px;
         }
 
         .donate-button:hover {
@@ -473,61 +507,153 @@
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 15px;
             border-top: 1px solid #444;
             color: #ccc;
-            font-size: 14px;
+            font-size: 12px;
+        }
+
+        /* मोबाइल मेनू */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary-blue);
+            cursor: pointer;
         }
 
         /* रेस्पॉन्सिव डिजाइन */
-        @media (max-width: 992px) {
+        @media (min-width: 768px) {
             .main-container {
-                flex-direction: column;
+                flex-direction: row;
             }
             
             .sidebar {
-                flex: 0 0 100%;
-                margin-bottom: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
+                flex: 0 0 250px;
+                order: 1;
+                width: auto;
             }
             
-            .top-right-options {
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
+            .tools-section {
+                order: 2;
+                flex: 1;
+                width: auto;
             }
             
             .tools-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
-
-            .language-switcher {
-                margin: 10px 0;
+            
+            .category-list {
+                display: block;
+            }
+            
+            .category-item {
+                margin-bottom: 8px;
+                flex: none;
+            }
+            
+            .category-link {
+                text-align: left;
             }
         }
 
-        @media (max-width: 576px) {
-            .search-section h1 {
-                font-size: 2rem;
+        @media (max-width: 767px) {
+            header {
+                padding: 12px 4%;
             }
             
-            .tools-grid {
-                grid-template-columns: 1fr;
+            .logo-container {
+                min-width: auto;
+            }
+            
+            .logo-text {
+                font-size: 18px;
+            }
+            
+            .top-right-options {
+                gap: 10px;
+                margin-top: 10px;
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .search-section {
+                padding: 20px 4%;
+            }
+            
+            .search-section h1 {
+                font-size: 1.5rem;
+            }
+            
+            .main-container {
+                padding: 15px 4%;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
+                gap: 25px;
             }
-
+            
             .contact-dropdown {
-                width: 250px;
-                right: -50px;
+                width: 240px;
+                right: -30px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .category-item {
+                flex: 1 0 100%;
+            }
+            
+            .search-input {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+            
+            .search-button {
+                padding: 7px 14px;
+                font-size: 13px;
+            }
+            
+            .tool-card {
+                padding: 12px;
+            }
+            
+            .tool-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            
+            .tool-name {
+                font-size: 15px;
+            }
+            
+            .tool-description {
+                font-size: 11px;
+            }
+            
+            .donate-section {
+                padding: 15px;
+            }
+            
+            .donate-section h2 {
+                font-size: 16px;
+            }
+            
+            .donate-button {
+                padding: 8px 20px;
+                font-size: 13px;
             }
         }
     </style>
@@ -660,38 +786,38 @@
     </footer>
 
     <script>
-        // टूल्स डेटा
+        // टूल्स डेटा - प्रत्येक टूल में एक pageUrl प्रॉपर्टी जोड़ी गई है
         const toolsData = [
-            { name: "Image to Text", description: "Extract text from your images easily with our OCR tool.", icon: "fas fa-image", category: "image" },
-            { name: "Image to PDF", description: "Convert your images to PDF documents in seconds.", icon: "fas fa-file-pdf", category: "pdf" },
-            { name: "Image Compressor", description: "Reduce image size without losing quality.", icon: "fas fa-compress-arrows-alt", category: "image" },
-            { name: "Photo Resizing", description: "Resize your images to any dimension quickly.", icon: "fas fa-expand-arrows-alt", category: "image" },
-            { name: "Video Converter", description: "Convert videos to different formats easily.", icon: "fas fa-video", category: "video" },
-            { name: "Business Card Generator", description: "Create professional business cards in minutes.", icon: "fas fa-id-card", category: "design" },
-            { name: "YouTube Thumbnail Download", description: "Download thumbnails from YouTube videos.", icon: "fab fa-youtube", category: "video" },
-            { name: "YouTube Video Script", description: "Generate scripts for your YouTube videos.", icon: "fas fa-scroll", category: "video" },
-            { name: "YouTube Tag Maker", description: "Create effective tags for your YouTube videos.", icon: "fas fa-hashtag", category: "video" },
-            { name: "Image to QR Code", description: "Convert images to QR codes instantly.", icon: "fas fa-qrcode", category: "image" },
-            { name: "QR Code Designing", description: "Design and customize your QR codes.", icon: "fas fa-code", category: "design" },
-            { name: "PDF to Word", description: "Convert PDF files to editable Word documents.", icon: "fas fa-file-word", category: "pdf" },
-            { name: "Script Correct", description: "Check and correct your scripts for errors.", icon: "fas fa-spell-check", category: "other" },
-            { name: "Passport Size Photo Maker", description: "Create passport size photos online.", icon: "fas fa-id-badge", category: "image" },
-            { name: "Age Calculator", description: "Calculate age from date of birth.", icon: "fas fa-birthday-cake", category: "calculator" },
-            { name: "Investment Calculator", description: "Calculate returns on your investments.", icon: "fas fa-chart-line", category: "calculator" },
-            { name: "Calendar Tool", description: "Plan and manage your schedule.", icon: "fas fa-calendar-alt", category: "other" },
-            { name: "BMI Calculator", description: "Calculate your Body Mass Index.", icon: "fas fa-weight", category: "calculator" },
-            { name: "Text to Speech", description: "Convert text to natural sounding speech.", icon: "fas fa-microphone", category: "converter" },
-            { name: "Notepad", description: "Simple online notepad for your notes.", icon: "fas fa-sticky-note", category: "other" },
-            { name: "Image to Base64", description: "Convert images to Base64 encoding.", icon: "fas fa-image", category: "image" },
-            { name: "Text Extractor", description: "Extract text from various file formats.", icon: "fas fa-file-alt", category: "converter" },
-            { name: "Image Cropper", description: "Crop your images to perfect size.", icon: "fas fa-crop-alt", category: "image" },
-            { name: "Color Picker", description: "Pick colors from anywhere on screen.", icon: "fas fa-palette", category: "design" },
-            { name: "Font Generator", description: "Create cool font styles for your text.", icon: "fas fa-font", category: "design" },
-            { name: "Time Zone Converter", description: "Convert time between different time zones.", icon: "fas fa-clock", category: "converter" },
-            { name: "Unit Converter", description: "Convert between different units of measurement.", icon: "fas fa-ruler", category: "converter" },
-            { name: "Scientific Calculator", description: "Advanced calculator for complex calculations.", icon: "fas fa-calculator", category: "calculator" },
-            { name: "Password Generator", description: "Generate strong and secure passwords.", icon: "fas fa-lock", category: "other" },
-            { name: "Random Picker", description: "Make random selections from lists.", icon: "fas fa-random", category: "other" }
+            { name: "Image to Text", description: "Extract text from your images easily with our OCR tool.", icon: "fas fa-image", category: "image", pageUrl: "tools/image-to-text.html" },
+            { name: "Image to PDF", description: "Convert your images to PDF documents in seconds.", icon: "fas fa-file-pdf", category: "pdf", pageUrl: "tools/image-to-pdf.html" },
+            { name: "Image Compressor", description: "Reduce image size without losing quality.", icon: "fas fa-compress-arrows-alt", category: "image", pageUrl: "tools/image-compressor.html" },
+            { name: "Photo Resizing", description: "Resize your images to any dimension quickly.", icon: "fas fa-expand-arrows-alt", category: "image", pageUrl: "tools/photo-resizing.html" },
+            { name: "Video Converter", description: "Convert videos to different formats easily.", icon: "fas fa-video", category: "video", pageUrl: "tools/video-converter.html" },
+            { name: "Business Card Generator", description: "Create professional business cards in minutes.", icon: "fas fa-id-card", category: "design", pageUrl: "tools/business-card-generator.html" },
+            { name: "YouTube Thumbnail Download", description: "Download thumbnails from YouTube videos.", icon: "fab fa-youtube", category: "video", pageUrl: "tools/youtube-thumbnail-download.html" },
+            { name: "YouTube Video Script", description: "Generate scripts for your YouTube videos.", icon: "fas fa-scroll", category: "video", pageUrl: "tools/youtube-video-script.html" },
+            { name: "YouTube Tag Maker", description: "Create effective tags for your YouTube videos.", icon: "fas fa-hashtag", category: "video", pageUrl: "tools/youtube-tag-maker.html" },
+            { name: "Image to QR Code", description: "Convert images to QR codes instantly.", icon: "fas fa-qrcode", category: "image", pageUrl: "tools/image-to-qrcode.html" },
+            { name: "QR Code Designing", description: "Design and customize your QR codes.", icon: "fas fa-code", category: "design", pageUrl: "tools/qrcode-designing.html" },
+            { name: "PDF to Word", description: "Convert PDF files to editable Word documents.", icon: "fas fa-file-word", category: "pdf", pageUrl: "tools/pdf-to-word.html" },
+            { name: "Script Correct", description: "Check and correct your scripts for errors.", icon: "fas fa-spell-check", category: "other", pageUrl: "tools/script-correct.html" },
+            { name: "Passport Size Photo Maker", description: "Create passport size photos online.", icon: "fas fa-id-badge", category: "image", pageUrl: "tools/passport-photo-maker.html" },
+            { name: "Age Calculator", description: "Calculate age from date of birth.", icon: "fas fa-birthday-cake", category: "calculator", pageUrl: "tools/age-calculator.html" },
+            { name: "Investment Calculator", description: "Calculate returns on your investments.", icon: "fas fa-chart-line", category: "calculator", pageUrl: "tools/investment-calculator.html" },
+            { name: "Calendar Tool", description: "Plan and manage your schedule.", icon: "fas fa-calendar-alt", category: "other", pageUrl: "tools/calendar-tool.html" },
+            { name: "BMI Calculator", description: "Calculate your Body Mass Index.", icon: "fas fa-weight", category: "calculator", pageUrl: "tools/bmi-calculator.html" },
+            { name: "Text to Speech", description: "Convert text to natural sounding speech.", icon: "fas fa-microphone", category: "converter", pageUrl: "tools/text-to-speech.html" },
+            { name: "Notepad", description: "Simple online notepad for your notes.", icon: "fas fa-sticky-note", category: "other", pageUrl: "tools/notepad.html" },
+            { name: "Image to Base64", description: "Convert images to Base64 encoding.", icon: "fas fa-image", category: "image", pageUrl: "tools/image-to-base64.html" },
+            { name: "Text Extractor", description: "Extract text from various file formats.", icon: "fas fa-file-alt", category: "converter", pageUrl: "tools/text-extractor.html" },
+            { name: "Image Cropper", description: "Crop your images to perfect size.", icon: "fas fa-crop-alt", category: "image", pageUrl: "tools/image-cropper.html" },
+            { name: "Color Picker", description: "Pick colors from anywhere on screen.", icon: "fas fa-palette", category: "design", pageUrl: "tools/color-picker.html" },
+            { name: "Font Generator", description: "Create cool font styles for your text.", icon: "fas fa-font", category: "design", pageUrl: "tools/font-generator.html" },
+            { name: "Time Zone Converter", description: "Convert time between different time zones.", icon: "fas fa-clock", category: "converter", pageUrl: "tools/timezone-converter.html" },
+            { name: "Unit Converter", description: "Convert between different units of measurement.", icon: "fas fa-ruler", category: "converter", pageUrl: "tools/unit-converter.html" },
+            { name: "Scientific Calculator", description: "Advanced calculator for complex calculations.", icon: "fas fa-calculator", category: "calculator", pageUrl: "tools/scientific-calculator.html" },
+            { name: "Password Generator", description: "Generate strong and secure passwords.", icon: "fas fa-lock", category: "other", pageUrl: "tools/password-generator.html" },
+            { name: "Random Picker", description: "Make random selections from lists.", icon: "fas fa-random", category: "other", pageUrl: "tools/random-picker.html" }
         ];
 
         // DOM लोड होने पर
@@ -741,24 +867,50 @@
                 });
             });
             
-            // टूल कार्ड क्लिक करने पर
+            // टूल कार्ड क्लिक करने पर - नए पेज पर रीडायरेक्ट
             toolsGrid.addEventListener('click', function(e) {
                 const toolCard = e.target.closest('.tool-card');
                 if (toolCard) {
-                    const toolName = toolCard.querySelector('.tool-name').textContent;
-                    alert('Tool clicked: ' + toolName);
+                    const toolName = toolCard.getAttribute('data-tool-name');
+                    const tool = toolsData.find(t => t.name === toolName);
+                    if (tool && tool.pageUrl) {
+                        // यहाँ आप टूल के पेज पर रीडायरेक्ट कर सकते हैं
+                        // वर्तमान में यह एक alert दिखाएगा, लेकिन आप window.location.assign(tool.pageUrl) का उपयोग कर सकते हैं
+                        alert('Redirecting to: ' + tool.pageUrl + '\n\nआप भविष्य में इस टूल के पेज पर रीडायरेक्ट हो जाएंगे।');
+                        // window.location.assign(tool.pageUrl); // अनकमेंट करें जब आपके पेज तैयार हों
+                    }
                 }
             });
             
             // टूल्स फिल्टर करने का फंक्शन
             function filterTools() {
-                return toolsData.filter(tool => {
-                    const matchesCategory = currentCategory === 'all' || tool.category === currentCategory;
-                    const matchesSearch = currentSearchTerm === '' || 
-                                         tool.name.toLowerCase().includes(currentSearchTerm) || 
-                                         tool.description.toLowerCase().includes(currentSearchTerm);
-                    return matchesCategory && matchesSearch;
+                // पहले कैटेगरी के आधार पर फिल्टर करें
+                let filteredTools = toolsData.filter(tool => {
+                    return currentCategory === 'all' || tool.category === currentCategory;
                 });
+                
+                // अगर सर्च टर्म है, तो सर्च के आधार पर फिल्टर करें
+                if (currentSearchTerm) {
+                    filteredTools = filteredTools.filter(tool => {
+                        // नाम या विवरण में सर्च टर्म हो
+                        return tool.name.toLowerCase().includes(currentSearchTerm) || 
+                               tool.description.toLowerCase().includes(currentSearchTerm);
+                    });
+                    
+                    // सर्च टर्म से शुरू होने वाले टूल्स को प्राथमिकता दें
+                    filteredTools.sort((a, b) => {
+                        const aStartsWith = a.name.toLowerCase().startsWith(currentSearchTerm);
+                        const bStartsWith = b.name.toLowerCase().startsWith(currentSearchTerm);
+                        
+                        if (aStartsWith && !bStartsWith) return -1;
+                        if (!aStartsWith && bStartsWith) return 1;
+                        
+                        // अगर दोनों शुरू होते हैं या नहीं, तो नाम के अनुसार क्रमबद्ध करें
+                        return a.name.localeCompare(b.name);
+                    });
+                }
+                
+                return filteredTools;
             }
             
             // सेक्शन टाइटल अपडेट करें
@@ -784,6 +936,7 @@
                 tools.forEach(tool => {
                     const toolCard = document.createElement('div');
                     toolCard.className = 'tool-card';
+                    toolCard.setAttribute('data-tool-name', tool.name);
                     toolCard.innerHTML = `
                         <div class="tool-icon">
                             <i class="${tool.icon}"></i>
@@ -824,7 +977,7 @@
                     // फुटर लिंक्स को हिंदी में बदलें
                     const footerColumns = document.querySelectorAll('.footer-column h3');
                     footerColumns[0].textContent = 'कंपनी';
-                    footerColumns[1].textContent = 'टूल्स';
+                    footerColumns[1].textContent = ' टूल्स';
                     footerColumns[2].textContent = 'सहायता';
                     footerColumns[3].textContent = 'कानूनी';
                     
